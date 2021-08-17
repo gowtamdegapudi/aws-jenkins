@@ -38,34 +38,30 @@
                 sh 'terraform apply --auto-approve'
             }
         }
-        stage  {
+        stage 
            when {
                      expression { choice == '2' }
                     }
          steps {
                 git branch: 'main', credentialsId: 'git-hub', url: 'https://github.com/gowtamdegapudi/aws-jenkins.git'
             }
-        }
-        stage  {
+        stage 
             steps {
                 sh 'terraform init'
             }
-        }
-        stage  {
+        stage
             steps {
                 sh 'terraform fmt'
             }
-        }
         stage  {
             steps {
                 sh 'terraform validate'
             }
         }
-        stage  {
+        stage  
             steps {
                 sh 'terraform plan '
             }
-        }
         stage  {
             steps {
                 sh 'terraform apply --auto-approve'
