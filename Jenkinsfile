@@ -94,7 +94,7 @@
                 sh 'terraform validate'
             }
         }
-        stage ) {
+        stage {
             steps {
                 sh 'terraform plan '
             }
