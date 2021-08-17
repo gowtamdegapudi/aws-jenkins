@@ -38,7 +38,6 @@
                 sh 'terraform apply --auto-approve'
             }
         }
-    }
         stage ('2 choice') {
            when {
                              expression { choice == '2' }
