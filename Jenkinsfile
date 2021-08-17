@@ -5,7 +5,7 @@
         terraform 'terraform'
     }
     stages {
-        stage ("checkout scm")('1 choice') {
+        stage ("checkout scm") {
            when { 
                               expression {choice == '1'}
                     }
@@ -38,7 +38,7 @@
                 sh 'terraform apply --auto-approve'
             }
         }
-        stage ("checkout scm")('2 choice') {
+        stage ("checkout scm") {
            when {
                              expression { choice == '2' }
                     }
@@ -71,7 +71,7 @@
                 sh 'terraform apply --auto-approve'
             }
         }
-        stage ("checkout scm")('3 choice') {
+        stage ("checkout scm") {
            when {
                              expression { choice == '3' }
            }
