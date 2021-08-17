@@ -5,7 +5,7 @@
         terraform 'terraform'
     }
     stages {
-        stage ("checkout scm") {
+        stage ('checkout scm') {
            when { 
                               expression {choice == '1'}
                     }
@@ -13,7 +13,7 @@
                 git branch: 'main', credentialsId: 'git-hub', url: 'https://github.com/gowtamdegapudi/aws-jenkins.git'
             }
         }
-        stage ("terraform init") {
+        stage ('terraform init') {
             steps {
                 sh 'terraform init'
             }
