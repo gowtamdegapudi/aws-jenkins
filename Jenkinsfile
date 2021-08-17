@@ -38,6 +38,7 @@
                 sh 'terraform apply --auto-approve'
             }
         }
+    }
         stage ('2 choice') {
            when {
                              expression { choice == '2' }
@@ -74,7 +75,7 @@
         stage ('3 choice') {
            when {
                              expression { choice == '3' }
-                    }
+           }
           steps {
                 git branch: 'main', credentialsId: 'git-hub', url: 'https://github.com/gowtamdegapudi/aws-jenkins.git'
             }
