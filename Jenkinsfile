@@ -38,68 +38,68 @@
                 sh 'terraform apply --auto-approve'
             }
         }
-        stage ("checkout scm") {
+        stage  {
            when {
-                             expression { choice == '2' }
+                     expression { choice == '2' }
                     }
          steps {
                 git branch: 'main', credentialsId: 'git-hub', url: 'https://github.com/gowtamdegapudi/aws-jenkins.git'
             }
         }
-        stage ("terraform init") {
+        stage  {
             steps {
                 sh 'terraform init'
             }
         }
-        stage ("terraform fmt") {
+        stage  {
             steps {
                 sh 'terraform fmt'
             }
         }
-        stage ("terraform validate") {
+        stage  {
             steps {
                 sh 'terraform validate'
             }
         }
-        stage ("terrafrom plan") {
+        stage  {
             steps {
                 sh 'terraform plan '
             }
         }
-        stage ("terraform apply") {
+        stage  {
             steps {
                 sh 'terraform apply --auto-approve'
             }
         }
-        stage ("checkout scm") {
+        stage  {
            when {
-                             expression { choice == '3' }
+                   expression { choice == '3' }
            }
           steps {
                 git branch: 'main', credentialsId: 'git-hub', url: 'https://github.com/gowtamdegapudi/aws-jenkins.git'
             }
         }
-        stage ("terraform init") {
+        stage  {
             steps {
                 sh 'terraform init'
             }
         }
-        stage ("terraform fmt") {
+        stage  {
             steps {
                 sh 'terraform fmt'
             }
         }
-        stage ("terraform validate") {
+        stage  {
             steps {
                 sh 'terraform validate'
             }
         }
-        stage ("terrafrom plan") {
+        stage ) {
             steps {
                 sh 'terraform plan '
             }
         }
-        stage ("terraform apply") {
+        stage  {
             steps {
                 sh 'terraform apply --auto-approve'
             }
